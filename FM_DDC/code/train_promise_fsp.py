@@ -289,14 +289,14 @@ if __name__ == "__main__":
 
     # -- path to save models
     
-    self_snapshot_path = "/home/user/Frequency_Matters_DDC_SSL_Skin_Lesion_Segmentation/model/{}_{}_{}_labeled/".format(args.dataset,args.exp, args.labelnum)
+    self_snapshot_path = "/home/user/model/{}_{}_{}_labeled/".format(args.dataset,args.exp, args.labelnum)
    
     if not os.path.exists(self_snapshot_path):
         os.makedirs(self_snapshot_path)
     shutil.copy(str(sys.argv[0]), self_snapshot_path)
     if os.path.exists(self_snapshot_path + '/code'):
         shutil.rmtree(self_snapshot_path + '/code')
-    #shutil.copytree('/home/user/Frequency_Matters_DDC_SSL_Skin_Lesion_Segmentation/', self_snapshot_path + '/code',shutil.ignore_patterns(['.git', '__pycache__']))
+    #shutil.copytree('/home/user/', self_snapshot_path + '/code',shutil.ignore_patterns(['.git', '__pycache__']))
    
     logging.basicConfig(filename=self_snapshot_path+"/log.txt", level=logging.INFO, format='[%(asctime)s.%(msecs)03d] %(message)s', datefmt='%H:%M:%S')
     logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
