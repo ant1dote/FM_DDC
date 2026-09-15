@@ -100,7 +100,7 @@ def Inference(FLAGS):
     args = parser.parse_args()
     net = net_factory(args, net_type = FLAGS.model, in_chns=1, class_num=FLAGS.num_classes)
     #save_model_path = os.path.join(snapshot_path, '{}_best_model.pth'.format(FLAGS.model))
-    save_model_path = '/media/user/SX5PRO/FM_DDC/models/PROMISE12_fsp_RE2_6_labeled/unets_noa_best_model.pth'
+    save_model_path = '/media/user/models/PROMISE12_fsp_RE2_6_labeled/unets_noa_best_model.pth'
     net.load_state_dict(torch.load(save_model_path), strict=True)
     print("init weight from {}".format(save_model_path))
     net.eval()
