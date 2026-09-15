@@ -289,7 +289,7 @@ if __name__ == "__main__":
 
     # -- path to save models
     
-    self_snapshot_path = "/home/user//{}_{}_{}_labeled/".format(args.dataset,args.exp, args.labelnum)
+    self_snapshot_path = "/home/user/{}_{}_{}_labeled/".format(args.dataset,args.exp, args.labelnum)
    
     if not os.path.exists(self_snapshot_path):
         os.makedirs(self_snapshot_path)
